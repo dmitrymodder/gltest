@@ -27,6 +27,9 @@ The project is written in Go and uses OpenGL for rendering tests.
 - **Makefile**: Script for automated project build.
 - **build/**: Output directory of the build (created automatically).
 
+## When I can view my results?
+If you used the release version, all results can be found at https://gltestsite.vercel.app/.
+
 ## System requirements
 
 - To work: OpenGL support, 64 bit OS
