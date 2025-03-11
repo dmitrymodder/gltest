@@ -33,9 +33,9 @@ const (
 
 // Keys
 const (
-    SUPABASE_URL = "https://bjtvesyroiiemkyicdhj.supabase.co"
-    SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqdHZlc3lyb2lpZW1reWljZGhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE1MzczMzksImV4cCI6MjA1NzExMzMzOX0.OGcx0S3UCf2kTYwOAESaqdqM6v2ZQXjZWxQIfTSZoCw" // Замените на ваш публичный ключ
-    TABLE_NAME   = "benchmark_results"
+    SUPABASE_URL = "your_db"
+    SUPABASE_KEY = "your_key"
+    TABLE_NAME   = "your_table"
 )
 
 // FPS structure
@@ -67,8 +67,8 @@ type BenchmarkResult struct {
     TrianglesMinFpsHistory []FpsEntry  `json:"triangles_min_fps_history"`
     OceanAvgFpsHistory     []FpsEntry  `json:"ocean_avg_fps_history"`
     OceanMinFpsHistory     []FpsEntry  `json:"ocean_min_fps_history"`
-    RamSize                string      `json:"ram_size"`  // Новый параметр: размер ОЗУ
-    CpuName                string      `json:"cpu_name"`  // Новый параметр: название CPU
+    RamSize                string      `json:"ram_size"`
+    CpuName                string      `json:"cpu_name"`
     CreatedAt              time.Time   `json:"created_at"`
 }
 
