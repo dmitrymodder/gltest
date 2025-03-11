@@ -1,0 +1,42 @@
+name: Build Windows Go Project
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Позволяет запускать workflow вручную
+
+jobs:
+  build:
+    runs-on: windows-latest
+        
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.23.4'
+      
+    - name: Create build directories
+      shell: cmd
+      run: |
+        if not exist "build" mkdir "build"
+        if not exist "build\tests" mkdir "build\tests"
+    
+    - name: Build main application
+      run: go build -ldflags "-H=windowsgui" -o build/GLTest.exe main.go
+    
+    - name: Build test applications
+      run: |
+        go build -o build/tests/butterfly.exe tests/butterfly.go
+        go build -o build/tests/ocean.exe tests/ocean.go
+        go build -o build/tests/triangles.exe tests/triangles.go
+        go build -ldflags "-H=windowsgui" -o build/send.exe send.go
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: windows-binaries
+        path: build/
