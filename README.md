@@ -15,7 +15,6 @@ GLTest is a benchmark designed for Windows that:
 - Supports sending results for statistics via a separate executable file `send.exe`.
 
 The project is written in Go and uses OpenGL for rendering tests.
-
 ## What include?
 
 - **main.go**: Main application file with GUI and test run logic.
