@@ -1,6 +1,4 @@
 # GLTest - OpenGL Benchmark Tool
-
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/dmitrymodder/gltest?style=flat-square)
 ![GitHub license](https://img.shields.io/github/license/dmitrymodder/gltest?style=flat-square)
 
 GLTest is a tool for testing graphics processing unit (GPU) performance using OpenGL. The project is designed to evaluate a video card's capabilities through a series of tests, including rendering millions of dots, triangles and wave simulations, and then calculating a final score. The results can be sent to your database, such as Supabase.
